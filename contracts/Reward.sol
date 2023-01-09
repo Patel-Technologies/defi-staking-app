@@ -5,7 +5,7 @@ contract Reward {
   string public name =  "Reward Tocken";
   string public symbol = "RWD";
   uint256 public decimals = 6;
-  uint256 public totalSupply = 1000000000000000;
+  uint256 public totalSupply = 1000000000000000000000000;
 
   event Transfer(address indexed from, address indexed to, uint256 value);
 
