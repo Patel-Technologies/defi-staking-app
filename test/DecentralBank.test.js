@@ -21,6 +21,8 @@ contract('DecentralBank', ([owner, customer]) => {
 
         // Transfer all RWD tokens to DecentralBank (1 million)
         await rwd.transfer(decentralBank.address, ethToWei('1000000'))
+        // Transfer 100 Mock Tether tokens to investor
+        await tether.transfer(customer, ethToWei('100'), { from: owner })
     })
 
     describe('Mock Tether Deployment', async () => {
@@ -46,6 +48,30 @@ contract('DecentralBank', ([owner, customer]) => {
         it('Contract has tokens.', async () => {
             let balance = await rwd.balanceOf(decentralBank.address)
             assert.equal(balance.toString(), ethToWei('1000000'))
+        })
+
+        describe('Yield Farming', async () => {
+            it('Rewards investors for staking mTokens.', async () => {
+                let result
+                result = await tether.balanceOf(customer)
+                assert.equal(result.toString(), ethToWei('100'), 'Customer Mock Tether wallet balance correct before staking.')
+
+                // Customer deposits Mock Tether
+                await tether.approve(decentralBank.address, ethToWei('100'), { from: customer })
+                await decentralBank.stakeTokens(ethToWei('100'), { from: customer })
+
+                // Check Mock Tether balance after staking
+                result = await tether.balanceOf(customer)
+                assert.equal(result.toString(), ethToWei('0'), 'Customer Mock Tether wallet balance correct after staking.')
+
+                // Check staking balance
+                result = await tether.balanceOf(decentralBank.address)
+                assert.equal(result.toString(), ethToWei('100'), 'Decentral Bank Mock Tether balance correct after staking.')
+
+                // Check staking result
+                result = await decentralBank.isStaking(customer)
+                assert.equal(result.toString(), 'true', 'Customer staking status correct after staking.')
+            })
         })
     })
 })
