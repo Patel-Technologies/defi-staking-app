@@ -1,0 +1,5 @@
+Daily Progress
+
+11 Jan
+Deployment of smart contract and migration is completed. Also I have tested from truffle console. 
+
