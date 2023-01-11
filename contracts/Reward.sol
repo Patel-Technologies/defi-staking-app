@@ -2,7 +2,7 @@
 pragma solidity >=0.5.0;
 
 contract Reward {
-  string public name =  "Reward Tocken";
+  string public name =  "Reward Token";
   string public symbol = "RWD";
   uint256 public decimals = 6;
   uint256 public totalSupply = 1000000000000000000000000;
