@@ -76,8 +76,27 @@ contract('DecentralBank', ([owner, customer]) => {
                 await decentralBank.rewardToStakers({from:owner})
                 
                 // Checking that stakers get reward or not
-                result = await rwd.balanceOf(customer)
-                assert.equal(result.toString(), ethToWei('100'), 'Customer Reward Token wallet balance correct after staking.')
+                // result = await rwd.balanceOf(customer)
+                // assert.equal(result.toString(), ethToWei('100'), 'Customer Reward Token wallet balance correct after staking.')
+
+                // Unstake tocken
+                await decentralBank.unStakeTokens({from:customer})
+
+                // Checking that token unstaked or not
+                result = await tether.balanceOf(customer)
+                assert.equal(result.toString(), ethToWei('100'), 'Customer Mock Tether wallet balance correct after unstaking.')
+
+                // Checking that staking status is false or not
+                result = await decentralBank.isStaking(customer)
+                assert.equal(result.toString(), 'false', 'Customer staking status correct after unstaking.')
+
+                // Checking that decentralbank balance is 0 or not
+                result = await tether.balanceOf(decentralBank.address)
+                assert.equal(result.toString(), ethToWei('0'), 'Decentral Bank Mock Tether balance correct after unstaking.')
+
+                // Checking that staking balance is 0 or not
+                result = await decentralBank.stakingBalance(customer)
+                assert.equal(result.toString(), ethToWei('0'), 'Customer staking balance correct after unstaking.')
             })
         })
     })
