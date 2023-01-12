@@ -71,6 +71,13 @@ contract('DecentralBank', ([owner, customer]) => {
                 // Check staking result
                 result = await decentralBank.isStaking(customer)
                 assert.equal(result.toString(), 'true', 'Customer staking status correct after staking.')
+
+                // Reward to stakers
+                await decentralBank.rewardToStakers({from:owner})
+                
+                // Checking that stakers get reward or not
+                result = await rwd.balanceOf(customer)
+                assert.equal(result.toString(), ethToWei('100'), 'Customer Reward Token wallet balance correct after staking.')
             })
         })
     })
