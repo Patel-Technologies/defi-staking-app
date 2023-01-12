@@ -42,7 +42,7 @@ contract DecentralBank {
 
         for (uint256 i = 0; i < stakers.length; i++) {
             address recipient = stakers[i];
-            uint256 balance = stakingBalance[recipient];
+            uint256 balance = stakingBalance[recipient] / 10;
             if (balance > 0) {
                 reward.transfer(recipient, balance);
             }
