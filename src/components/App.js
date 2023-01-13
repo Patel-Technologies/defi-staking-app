@@ -27,15 +27,15 @@ function App() {
     return accountAddress.substring(0, 6) + "..." + accountAddress.substring(accountAddress.length - 4, accountAddress.length);
   }
 
-  function getAccountAddress() {
-    web3.eth.getAccounts().then((accounts) => {
+  async function getAccountAddress() {
+    await web3.eth.getAccounts().then((accounts) => {
       setAccountAddress(convertAccountAddressInto(accounts[0]));
     });
   }
 
-  React.useEffect(() => {
-    web3Connect();
-    getAccountAddress();
+  React.useEffect(async () => {
+    await web3Connect();
+    await getAccountAddress();
   }, []);
 
   return (
