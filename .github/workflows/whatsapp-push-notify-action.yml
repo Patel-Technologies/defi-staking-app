@@ -11,6 +11,7 @@ jobs:
           auth_token: c27a9e9371f502777d8466ce2800abf3
           to_whatsapp_no: +919924179232
 
+
         uses: ishween/whatsapp-push-notify-action@master
       
       - name : Run
