@@ -9,13 +9,13 @@ function App() {
   function web3Connect() {
     if (window.ethereum) {
       window.web3 = new Web3(window.ethereum);
-      console.log('window.ethereum', window.ethereum);
+      // console.log('window.ethereum', window.ethereum);
       window.ethereum.enable();
       web3 = window.web3;
     } else if (window.web3) {
       window.web3 = new Web3(window.web3.currentProvider);
       web3 = window.web3;
-      console.log('window.web3', window.web3);
+      // console.log('window.web3', window.web3);
     } else {
       window.alert('Non-Ethereum browser detected. You should consider trying MetaMask!');
       // console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
