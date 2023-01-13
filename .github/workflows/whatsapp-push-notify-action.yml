@@ -12,6 +12,7 @@ jobs:
           to_whatsapp_no: +919924179232
 
         uses: ishween/whatsapp-push-notify-action@master
+      
       - name : Run
         run: |
           echo 'Start!'
