@@ -7,5 +7,3 @@ Extended functionality of decentralBank contract to include deposit method.
 12 Jan
 Extended functionality of decentralBank contract to add reward token and unstake token method. Also added test cases for the same.
 Started Work on Frontend. Succesfully created Navbar.
-
-13 Jan
