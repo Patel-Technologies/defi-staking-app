@@ -9,4 +9,3 @@ Extended functionality of decentralBank contract to add reward token and unstake
 Started Work on Frontend. Succesfully created Navbar.
 
 13 Jan
-Created Home page and added functionality to deposit and withdraw tokens. Also added functionality to stake and unstake tokens.
