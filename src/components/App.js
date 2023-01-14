@@ -51,6 +51,11 @@ function App() {
     });
   }
 
+  // method to set and get network
+  async function getNetworkId() {
+    return await web3.eth.net.getId();
+  }
+
   React.useEffect(async () => {
     await web3Connect();
     await getAccountAddress();
