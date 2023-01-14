@@ -63,7 +63,7 @@ function App() {
 
   return (
     <div>
-      <AppBar accountAddress={accountAddress} setAccountAddress={setAccountAddress} />
+      <AppBar accountAddress={accountAddress} />
     </div>
   );
 }

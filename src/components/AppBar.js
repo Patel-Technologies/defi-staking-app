@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import './AppBar.css';
 
-function ResponsiveAppBar({accountAddress, setAccountAddress}) {
+function ResponsiveAppBar({accountAddress}) {
   
   return (
     <AppBar position="static" style={{overflow:"hidden"}}>
