@@ -2,20 +2,19 @@ import * as React from 'react';
 import './App.css';
 import  AppBar from './AppBar';
 import Web3 from 'web3';
+import { useEffect , useState } from 'react';
+import Tether from '../abis/Tether.json';
 
 function App() {
   //initialize state variable
-  const [accountAddress, setAccountAddress] = React.useState('');
-  const [tether,setTether] = React.useState({});
+  const [accountAddress, setAccountAddress] = useState(null);
+  const [tether,setTether] = useState({});
   const [rwd,setRwd] = React.useState({});
-  const [decentralBank,setDecentralBank] = React.useState({});
-  const [tetherBalance,setTetherBalance] = React.useState('0');
-  const [rwdBalance,setRwdBalance] = React.useState('0');
-  const [stakingBalance,setStakingBalance] = React.useState('0');
-  const [loading,setLoading] = React.useState(true); 
-
-  // initialize web3 variable
-  let web3;
+  const [decentralBank,setDecentralBank] = useState({});
+  const [tetherBalance,setTetherBalance] = useState('0');
+  const [rwdBalance,setRwdBalance] = useState('0');
+  const [stakingBalance,setStakingBalance] = useState('0');
+  const [loading,setLoading] = useState(true); 
 
   // method for connecting metamask
   function web3Connect() {
@@ -24,12 +23,10 @@ function App() {
     {
       window.web3 = new Web3(window.ethereum);
       window.ethereum.enable();
-      web3 = window.web3;
     } 
     else if (window.web3) 
     {
       window.web3 = new Web3(window.web3.currentProvider);
-      web3 = window.web3;
     } 
     else 
     {
@@ -38,28 +35,56 @@ function App() {
 
   }
 
-  // method to convert account address into short form
-  function convertAccountAddressInto(accountAddress)
-  {
-    return accountAddress.substring(0, 6) + "..." + accountAddress.substring(accountAddress.length - 4, accountAddress.length);
-  }
-
   // method to get account address
   async function getAccountAddress() {
-    await web3.eth.getAccounts().then((accounts) => {
-      setAccountAddress(convertAccountAddressInto(accounts[0]));
-    });
+    
+    const web3 = window.web3;
+    if (web3) {
+      const account = await web3.eth.getAccounts();
+      setAccountAddress(account[0]);
+    }
   }
 
   // method to set and get network
   async function getNetworkId() {
+    const web3 = window.web3;
+    if (web3 === undefined) {
+      return;
+    }
     return await web3.eth.net.getId();
   }
 
-  React.useEffect(async () => {
-    await web3Connect();
-    await getAccountAddress();
+  // method to load smart contract
+  async function loadSmartContract() {
+    const web3 = window.web3;
+    if (web3 === undefined) {
+      return;
+    }
+    const networkId = await getNetworkId();
+    const tetherData = Tether.networks[networkId];
+    if (tetherData) {
+      const tether = new web3.eth.Contract(Tether.abi, tetherData.address);
+      setTether(tether);
+      if(accountAddress !== null)
+      {
+        let tetherBalance = await tether.methods.balanceOf(accountAddress).call();
+        setTetherBalance(tetherBalance.toString());
+      }
+    }
+    else {
+      window.alert('Tether contract not deployed to detected network.');
+    }
+  }
+
+  useEffect(() => {
+    web3Connect();
   }, []);
+  
+  useEffect(() => {
+    getAccountAddress();
+    loadSmartContract();
+    console.log(accountAddress, "account address");
+  }, [accountAddress]);
 
   return (
     <div>
