@@ -4,6 +4,8 @@ import  AppBar from './AppBar';
 import Web3 from 'web3';
 import { useEffect , useState } from 'react';
 import Tether from '../abis/Tether.json';
+import DecentralBank from '../abis/DecentralBank.json';
+import RWD from '../abis/Reward.json';
 
 function App() {
   //initialize state variable
@@ -61,6 +63,8 @@ function App() {
       return;
     }
     const networkId = await getNetworkId();
+
+    // Load Tether
     const tetherData = Tether.networks[networkId];
     if (tetherData) {
       const tether = new web3.eth.Contract(Tether.abi, tetherData.address);
@@ -74,6 +78,41 @@ function App() {
     else {
       window.alert('Tether contract not deployed to detected network.');
     }
+
+    // Load RWD
+    const rwdData = RWD.networks[networkId];
+    if (rwdData) {
+      const rwd = new web3.eth.Contract(RWD.abi, rwdData.address);
+      setRwd(rwd);
+      if(accountAddress !== null)
+      {
+        let rwdBalance = await rwd.methods.balanceOf(accountAddress).call();
+        setRwdBalance(rwdBalance.toString());
+      }
+    }
+    else {
+      window.alert('RWD contract not deployed to detected network.');
+    }
+
+    // Load DecentralBank
+    const decentralBankData = DecentralBank.networks[networkId];
+    if (decentralBankData) {
+      const decentralBank = new web3.eth.Contract(DecentralBank.abi, decentralBankData.address);
+      setDecentralBank(decentralBank);
+      if(accountAddress !== null)
+      {
+        let stakingBalance = await decentralBank.methods.stakingBalance(accountAddress).call();
+        setStakingBalance(stakingBalance.toString());
+      }
+    }
+    else {
+      window.alert('DecentralBank contract not deployed to detected network.');
+    }
+    if(accountAddress !== null)
+    {
+      return ;
+    }
+    setLoading(false);
   }
 
   useEffect(() => {
@@ -83,7 +122,6 @@ function App() {
   useEffect(() => {
     getAccountAddress();
     loadSmartContract();
-    console.log(accountAddress, "account address");
   }, [accountAddress]);
 
   return (
