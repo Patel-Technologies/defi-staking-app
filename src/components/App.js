@@ -17,6 +17,17 @@ function App() {
   const [rwdBalance,setRwdBalance] = useState('0');
   const [stakingBalance,setStakingBalance] = useState('0');
   const [loading,setLoading] = useState(true); 
+  
+  // checking every state variable in console
+  console.log('Account Address',accountAddress);
+  console.log('Tether contract',tether);
+  console.log('Reward Contract',rwd);
+  console.log('DecentralBank Contract',decentralBank);
+  console.log('Tether Balance',tetherBalance);
+  console.log('Reward Balance',rwdBalance);
+  console.log('Staking Balance',stakingBalance);
+  console.log('Loading',loading);
+
 
   // method for connecting metamask
   function web3Connect() {
