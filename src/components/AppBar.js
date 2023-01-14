@@ -6,6 +6,12 @@ import Container from '@mui/material/Container';
 import './AppBar.css';
 
 function ResponsiveAppBar({accountAddress}) {
+
+  // method to convert account address into short form
+  function convertAccountAddressInto(accountAddress)
+  {
+    return accountAddress.substring(0, 6) + "..." + accountAddress.substring(accountAddress.length - 4, accountAddress.length);
+  }
   
   return (
     <AppBar position="static" style={{overflow:"hidden"}}>
@@ -54,7 +60,7 @@ function ResponsiveAppBar({accountAddress}) {
                 }}
                 className="account_address"
               >
-                Account Address: {accountAddress}
+                Account Address: {accountAddress ? convertAccountAddressInto(accountAddress) : "Connect to Metamask"}
               </Typography>
             </div>      
           </div>
