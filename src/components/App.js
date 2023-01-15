@@ -136,7 +136,7 @@ function App() {
   }, [accountAddress]);
 
   return (
-    <div>
+    <div className='dashboard'>
       <AppBar accountAddress={accountAddress} />
     </div>
   );
