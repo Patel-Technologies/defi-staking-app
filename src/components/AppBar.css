@@ -1,38 +1,124 @@
-.bankIcon{
-    margin-right: 1%; 
-    font-size: 1.5rem;  
+.navbar{
+    position: absolute;
+    width: 100%;
+    height: 8.28%;
+    background: #FFFFFF;
 }
 
-.navbar_flex{
+.navbar_group{
+    position: absolute;
+    width: 94.29%;
+    height: 69.56%;
+    left: 2.5%;
+    top: 14.5%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 1%;
+}
+
+.decentral_bank_logo{
+    width: 24px;
+    height: 24px;
+}
+
+.heading{
+    width: 20.90%;
+    left: 6.13%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.016em;
+    color: #00261C;
+}
+
+.user{
     display: flex;
     flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    padding: 0px;
+    gap: 4%;
+    position: absolute;
+    width: 14.29%;
+    left: 82.5%;
 }
 
-.nav_bar_flex{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
+.account_address{
+    height: 24px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.016em;
+    color: #00261C;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
-@media screen and (max-width: 750px) {
-    .nav_bar_flex{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .bankIcon{
-        margin-right: 3%;
-    }
+.name_logo{
+    width: 30px;
+    height: 30px;
+    border-radius: 12px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }
 
-@media screen and (max-width: 500px) {
-    .bank_name{
-        font-size: 0.5rem;
+@media screen and (max-width: 400px) {
+    .heading{
+        font-size: 10px;
+        width: 30%;
     }
     
+    .account_address{
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width:400px)  and (max-width: 600px) {
+    .heading{
+        font-size: 10px;
+        width: 30%;
+    }
+    
+    .account_address{
+        font-size: 10px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .heading{
+        font-size: 12px;
+    }
+
+    .account_address{
+        font-size: 12px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px){
+    .heading{
+        font-size: 14px;
+    }
+
+    .account_address{
+        font-size: 14px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px)  {
+
 }
