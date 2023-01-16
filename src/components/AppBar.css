@@ -70,6 +70,9 @@
 }
 
 @media screen and (max-width: 400px) {
+    .navbar{
+        height: 6%;
+    }
     .heading{
         font-size: 10px;
         width: 30%;
@@ -81,6 +84,9 @@
 }
 
 @media only screen and (min-width:400px)  and (max-width: 600px) {
+    .navbar{
+        height: 6%;
+    }
     .heading{
         font-size: 10px;
         width: 30%;
