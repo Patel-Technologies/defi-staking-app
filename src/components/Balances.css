@@ -1,0 +1,15 @@
+.balances_main_comp{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 28px 24px;
+    gap: 48px;
+    position: absolute;
+    width: 271px;
+    height: 190px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    border-radius: 16px;
+}
