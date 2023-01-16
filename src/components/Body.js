@@ -20,7 +20,7 @@ function Body({accountAddress}) {
         </div>
         <div className='transfer_fields'>
             <div className='decentral_logo_compo'>
-            <img src={Bank_Decentral} className='bank_decentral_img'></img>
+              <img src={Bank_Decentral} className='bank_decentral_img'></img>
                 <div className='text_field_dece'>Decentral Bank</div>
             </div>
             <div className='text_field_compo'>
