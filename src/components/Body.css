@@ -10,8 +10,11 @@
 }
 
 .balances_component{
-    width: 25%;
+    width: 20%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4.7%;
 }
 
 .transfer_component{
@@ -19,7 +22,7 @@
     flex-direction: row;
     align-items: center;
     padding: 6% 0%;
-    width: 73%;
+    width: 78%;
     height: 100%;
     background: #FFFFFF;
     border-radius: 16px;

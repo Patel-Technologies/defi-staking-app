@@ -4,12 +4,15 @@ import Decentral_Bank_Image from '../decentral_bank.webp';
 import Bank_Decentral from '../bank_dece.webp';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import Balance from './Balances';
 
 function Body({accountAddress}) {
   return (
     <div className='body'>
       <div className='balances_component'>
-
+        <Balance accountAddress={accountAddress}/>
+        <Balance accountAddress={accountAddress}/>
+        <Balance accountAddress={accountAddress}/>
       </div>
       <div className='transfer_component'>
         <div className='decentral_bank_images'>

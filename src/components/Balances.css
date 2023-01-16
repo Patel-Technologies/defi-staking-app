@@ -3,13 +3,116 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 28px 24px;
-    gap: 48px;
-    position: absolute;
-    width: 271px;
-    height: 190px;
-    left: 0px;
-    top: 0px;
+    gap: 25.26%;
+    width: 100%;
+    height: 30.20%;
     background: #FFFFFF;
     border-radius: 16px;
+}
+
+.balances_inner_comp{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9.6%;
+    width: 83.76%;
+    height: 84.73%;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.name_balance{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+    height: 21.73%;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    width: 100%;
+    font-family: 'Abel';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.016em;
+    text-align: center;
+    color: #013427;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.main_detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 5%;
+    width: 100%;
+    height: 72.78%;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.image_logo_currency{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.currency_name{
+    width: 100%;
+    height: 16px;
+    
+    /* Body Text/Medium/Medium */
+    
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.016em;
+    
+    color: #00140E;
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.currency_amount{
+    width: 100%;
+    height: 40px;
+    
+    /* Display Text/Small/Bold */
+    
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 41px;
+    
+    color: #5A55D2;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 2;
+    flex-grow: 0;
 }
