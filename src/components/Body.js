@@ -2,6 +2,8 @@ import * as React from 'react';
 import './Body.css';
 import Decentral_Bank_Image from '../decentral_bank.webp';
 import Bank_Decentral from '../bank_dece.webp';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 function Body({accountAddress}) {
   return (
@@ -19,7 +21,9 @@ function Body({accountAddress}) {
                 <div className='text_field_dece'>Decentral Bank</div>
             </div>
             <div className='text_field_compo'>
-                
+                <TextField id="outlined-basic" label="Amount in USDT" variant="outlined" />
+                <Button variant="contained">Deposit</Button>
+                <Button variant="contained">Withdraw</Button>
             </div>
         </div>
       </div>
