@@ -1,0 +1,124 @@
+.body{
+    position: absolute;
+    width: 95%;
+    height: 75.6%;
+    left: 1.95%;
+    top: 11.29%;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.balances_component{
+    width: 25%;
+    height: 100%;
+}
+
+.transfer_component{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 6% 0%;
+    width: 73%;
+    height: 100%;
+    background: #FFFFFF;
+    border-radius: 16px;
+}
+
+.decentral_bank_images{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    width: 43.75%;
+    height: 100%;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.transfer_fields{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 2.5%;
+    gap: 10%;
+    width: 56%;
+    height: 100%;
+    border-left: 1px solid rgba(26, 30, 41, 0.12);
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.decentral_bank_image{
+    width: 69.64%;
+    height: 100%;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.decentral_logo_compo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
+    width: 30%;
+    height: 26.50%;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.text_field_compo{
+    width: 75%;
+    height: 34%;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    display: flex;
+}
+
+.bank_decentral_img{
+    width: 80px;
+    height: 80px;
+    border-radius: 11.6468px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.text_field_dece{
+    width: 100%;
+    height: 29px;
+
+    text-align: center;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 29px;
+    /* identical to box height */
+
+    letter-spacing: 0.016em;
+
+    /* Stroke 2nd */
+
+    color: #1A1E29;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
