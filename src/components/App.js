@@ -6,6 +6,7 @@ import { useEffect , useState } from 'react';
 import Tether from '../abis/Tether.json';
 import DecentralBank from '../abis/DecentralBank.json';
 import RWD from '../abis/Reward.json';
+import Body from './Body';
 
 function App() {
   //initialize state variable
@@ -138,6 +139,7 @@ function App() {
   return (
     <div className='dashboard'>
       <AppBar accountAddress={accountAddress} />
+      <Body></Body>
     </div>
   );
 }
