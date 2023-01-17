@@ -9,6 +9,25 @@ import Tether from '../tether-usdt-logo.png';
 import Reward from '../reward.webp';
 
 function Body(props) {
+  const [amount, setAmount] = React.useState(0);
+
+  const handleAmountChange = (event) => {
+    setAmount(event.target.value);
+  };
+
+  const handleDeposit = () => {
+    if(amount)
+    {
+      // let processAmount = amount.value.toString();
+      let processAmount = window.web3.utils.toWei(amount.toString(), 'Ether');
+      props.stakeTokens(processAmount);
+    }
+  };
+
+  const handleWithdraw = () => {
+    props.unstakeTokens();
+  };
+
   return (
     <div className='body'>
       <div className='balances_component'>
@@ -26,9 +45,9 @@ function Body(props) {
                 <div className='text_field_dece'>Decentral Bank</div>
             </div>
             <div className='text_field_compo'>
-                <TextField id="outlined-basic" label="Amount in USDT" variant="outlined" />
-                <Button variant="contained">Deposit</Button>
-                <Button variant="contained">Withdraw</Button>
+                <TextField id="outlined-basic" label="Amount in USDT" variant="outlined" value={amount} onChange={handleAmountChange}/>
+                <Button variant="contained" onClick={handleDeposit}>Deposit</Button>
+                <Button variant="contained" onClick={handleWithdraw}>Withdraw</Button>
             </div>
         </div>
       </div>

@@ -127,6 +127,22 @@ function App() {
     setLoading(false);
   }
 
+  const stakeTokens = (amount) => {
+    setLoading(true);
+    tether.methods.approve(decentralBank._address, amount).send({ from: accountAddress }).on('transactionHash', (hash) => {
+      decentralBank.methods.stakeTokens(amount).send({ from: accountAddress }).on('transactionHash', (hash) => {
+        setLoading(false);
+      })
+    })
+  }
+
+  const unstakeTokens = () => {
+    setLoading(true);
+    decentralBank.methods.unStakeTokens().send({ from: accountAddress }).on('transactionHash', (hash) => {
+      setLoading(false);
+    })
+  }
+
   useEffect(() => {
     web3Connect();
   }, []);
@@ -143,12 +159,11 @@ function App() {
         <AppBar accountAddress={accountAddress} />
         <Body 
           accountAddress={accountAddress}
-          tether={tether}
-          rwd={rwd}
-          decentralBank={decentralBank}
           tetherBalance={tetherBalance}
           rwdBalance={rwdBalance}
-          stakingBalance={stakingBalance}  
+          stakingBalance={stakingBalance} 
+          stakeTokens={stakeTokens}
+          unstakeTokens={unstakeTokens}
         > 
         </Body>
       </div>
