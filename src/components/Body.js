@@ -37,11 +37,11 @@ function Body(props) {
       </div>
       <div className='transfer_component'>
         <div className='decentral_bank_images'>
-            <img src={Decentral_Bank_Image} className='decentral_bank_image'></img>
+            <img src={Decentral_Bank_Image} className='decentral_bank_image' alt="Bank Img"></img>
         </div>
         <div className='transfer_fields'>
             <div className='decentral_logo_compo'>
-              <img src={Bank_Decentral} className='bank_decentral_img'></img>
+              <img src={Bank_Decentral} className='bank_decentral_img' alt="Decentral Bank"></img>
                 <div className='text_field_dece'>Decentral Bank</div>
             </div>
             <div className='text_field_compo'>
