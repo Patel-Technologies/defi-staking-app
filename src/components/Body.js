@@ -9,18 +9,16 @@ import Tether from '../tether-usdt-logo.png';
 import Reward from '../reward.webp';
 
 function Body(props) {
-  const [amount, setAmount] = React.useState(0);
+  const [amount, setAmount] = React.useState('0');
 
   const handleAmountChange = (event) => {
     setAmount(event.target.value);
   };
 
   const handleDeposit = () => {
-    if(amount)
+    if(amount > 0)
     {
-      // let processAmount = amount.value.toString();
-      let processAmount = window.web3.utils.toWei(amount.toString(), 'Ether');
-      props.stakeTokens(processAmount);
+      props.stakeTokens(window.web3.utils.toWei(amount.toString()));
     }
   };
 
