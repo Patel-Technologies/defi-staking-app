@@ -17,3 +17,9 @@ Added smart contract in frontend.
 15 Jan
 Created Figma Design for the project.
 Created Responsive Navbar for app.
+
+16 Jan
+Created Responsive body for Web App.
+
+17 Jan
+Integrated Backend and smart contract with frontend.
