@@ -140,7 +140,6 @@ function App() {
     <div className='dashboard'>
       <AppBar accountAddress={accountAddress} />
       <Body></Body>
-      {/* <h1 className='footer'>© Designed, developed by Jay Ghevariya.</h1> */}
     </div>
   );
 }
