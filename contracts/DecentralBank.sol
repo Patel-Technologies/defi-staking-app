@@ -18,8 +18,8 @@ contract DecentralBank {
 
     constructor (Tether _tether,Reward _rwd) {
         owner = msg.sender;
-        reward = _rwd;
         tether = _tether;
+        reward = _rwd;
     }
 
     function stakeTokens(uint256 _amount) public {
