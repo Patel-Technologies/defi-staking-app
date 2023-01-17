@@ -141,7 +141,16 @@ function App() {
     return (
       <div className='dashboard'>
         <AppBar accountAddress={accountAddress} />
-        <Body></Body>
+        <Body 
+          accountAddress={accountAddress}
+          tether={tether}
+          rwd={rwd}
+          decentralBank={decentralBank}
+          tetherBalance={tetherBalance}
+          rwdBalance={rwdBalance}
+          stakingBalance={stakingBalance}  
+        > 
+        </Body>
       </div>
     );
   }

@@ -5,14 +5,16 @@ import Bank_Decentral from '../bank_dece.webp';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Balance from './Balances';
+import Tether from '../tether-usdt-logo.png';
+import Reward from '../reward.webp';
 
-function Body({accountAddress}) {
+function Body(props) {
   return (
     <div className='body'>
       <div className='balances_component'>
-        <Balance accountAddress={accountAddress}/>
-        <Balance accountAddress={accountAddress}/>
-        <Balance accountAddress={accountAddress}/>
+        <Balance name="Available Token:" logo={Tether} symbol="USDT" balance={window.web3.utils.fromWei(props.tetherBalance)}/>
+        <Balance name="Staking Token:" logo={Tether} symbol="USDT" balance={window.web3.utils.fromWei(props.stakingBalance)}/>
+        <Balance name="Reward Token:" logo={Reward} symbol="RWD" balance={window.web3.utils.fromWei(props.rwdBalance)}/>
       </div>
       <div className='transfer_component'>
         <div className='decentral_bank_images'>
