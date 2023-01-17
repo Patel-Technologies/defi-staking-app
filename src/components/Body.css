@@ -118,6 +118,15 @@
     flex-grow: 0;
 }
 
+.loading{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: auto;
+    font-family: 'Gilroy';
+}
+
 @media screen and (max-width: 400px) {
     .body{
         flex-direction: column;

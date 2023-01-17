@@ -136,11 +136,24 @@ function App() {
     loadSmartContract();
   }, [accountAddress]);
 
-  return (
-    <div className='dashboard'>
-      <AppBar accountAddress={accountAddress} />
-      <Body></Body>
-    </div>
-  );
+  if(loading === false)
+  {
+    return (
+      <div className='dashboard'>
+        <AppBar accountAddress={accountAddress} />
+        <Body></Body>
+      </div>
+    );
+  }
+  else
+  {
+    return(
+      <div className='dashboard'>
+        <h3 className='loading'>Loading...</h3>
+      </div>
+    );
+  }
+
+ 
 }
 export default App;
