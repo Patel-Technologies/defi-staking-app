@@ -127,6 +127,22 @@ function App() {
     setLoading(false);
   }
 
+  const stakeTokens = (amount) => {
+    setLoading(true);
+    tether.methods.approve(decentralBank._address, amount).send({ from: accountAddress }).on('transactionHash', (hash) => {
+      decentralBank.methods.stakeTokens(amount).send({ from: accountAddress }).on('transactionHash', (hash) => {
+        setLoading(false);
+      })
+    })
+  }
+
+  const unstakeTokens = () => {
+    setLoading(true);
+    decentralBank.methods.unStakeTokens().send({ from: accountAddress }).on('transactionHash', (hash) => {
+      setLoading(false);
+    })
+  }
+
   useEffect(() => {
     web3Connect();
   }, []);
@@ -136,12 +152,32 @@ function App() {
     loadSmartContract();
   }, [accountAddress]);
 
-  return (
-    <div className='dashboard'>
-      <AppBar accountAddress={accountAddress} />
-      <Body></Body>
-      {/* <h1 className='footer'>© Designed, developed by Jay Ghevariya.</h1> */}
-    </div>
-  );
+  if(loading === false)
+  {
+    return (
+      <div className='dashboard'>
+        <AppBar accountAddress={accountAddress} />
+        <Body 
+          accountAddress={accountAddress}
+          tetherBalance={tetherBalance}
+          rwdBalance={rwdBalance}
+          stakingBalance={stakingBalance} 
+          stakeTokens={stakeTokens}
+          unstakeTokens={unstakeTokens}
+        > 
+        </Body>
+      </div>
+    );
+  }
+  else
+  {
+    return(
+      <div className='dashboard'>
+        <h3 className='loading'>Loading...</h3>
+      </div>
+    );
+  }
+
+ 
 }
 export default App;

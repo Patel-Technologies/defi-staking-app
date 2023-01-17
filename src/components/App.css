@@ -10,6 +10,20 @@
         overflow: scroll;
         background: #EFF3FD;
     }
+    .footer{
+        position: absolute;
+        text-align: center;
+        left: 50%;
+        top: 92%;
+        transform: translate(-50%, -50%);
+        font-family: 'Abel';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+    
+        color: black;
+    }
 }
 
 @media only screen and (min-width:400px)  and (max-width: 600px) {
@@ -20,54 +34,19 @@
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
-    .footer{
-        position: absolute;
-        text-align: center;
-        left: 50%;
-        top: 92%;
-        transform: translate(-50%, -50%);
-        font-family: 'Abel';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-    
-        color: black;
-    }
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px){
-    .footer{
-        position: absolute;
-        text-align: center;
-        left: 50%;
-        top: 92%;
-        transform: translate(-50%, -50%);
-        font-family: 'Abel';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-    
-        color: black;
-    }
+
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-    .footer{
-        position: absolute;
-        text-align: center;
-        left: 50%;
-        top: 92%;
-        transform: translate(-50%, -50%);
-        font-family: 'Abel';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-    
-        color: black;
-    }
+
 }
 
+@media only screen and (min-width: 1200px) {
+
+}
+    
 

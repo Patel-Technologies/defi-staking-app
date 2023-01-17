@@ -14,11 +14,11 @@ function ResponsiveAppBar({accountAddress}) {
   return (
     <div className='navbar'>
       <div className='navbar_group'>
-        <img src={DecentralLogo} className='decentral_bank_logo'></img>
+        <img src={DecentralLogo} alt="Decentral Bank Logo" className='decentral_bank_logo'></img>
         <div className='heading'>DAPP Yield Staking </div>
         <div className='user'>
           <div className='account_address'>Account Address: {accountAddress ? convertAccountAddressInto(accountAddress) : "Connect with metamask account."}</div>
-          <img src={UserImage} className='name_logo'></img>
+          <img src={UserImage} className='name_logo' alt="User Logo"></img>
         </div>
       </div>
     </div>
