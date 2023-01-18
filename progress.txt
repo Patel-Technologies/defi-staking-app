@@ -23,3 +23,6 @@ Created Responsive body for Web App.
 
 17 Jan
 Integrated Backend and smart contract with frontend.
+
+18 Jan
+Updated README. and deployed smart contract in goerli test net.
