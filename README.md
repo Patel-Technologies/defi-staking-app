@@ -20,28 +20,24 @@ Defi Stake App is a simple application that allows users to stake their tokens a
 
     - User can withdraw token from decentral bank if they have enough staking balance.
     - Click on withdraw button. It redirect to the transaction page of metamask. Confirm the transaction and wait for the transaction to be mined.
-    <img src="./assets/Withdraw.png" height="300px"> </img>
     - Reload the page to see the updated balance.
 
 3. Available Balance
 
     - User can see their available balance of token in their wallet. 
     - This balance is in USDT currency.
-    <img src="./assets/available.png" height="150px"> </img>
 
 4. Staking Balance
 
     - User can see their staking balance of token in their wallet. 
     - Staking Balance is the amount of token that user has deposited in the decentral bank.
     - This balance is in USDT currency.
-    <img src="./assets/staking.png" height="150px"> </img>
 
 5. Rewards Balance
 
     - User can see their rewards balance of token in their wallet. 
     - Rewards Balance is the amount of token that user has earned by staking their token in the decentral bank.
     - This balance is in RWD currency.
-    <img src="./assets/Reward.png" height="150px"> </img>
     
 
 ## **To run this application (useful commands)**
