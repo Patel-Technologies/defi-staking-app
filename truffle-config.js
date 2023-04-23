@@ -3,6 +3,16 @@ const fs = require("fs-extra");
 const HDWalletProvider = require('truffle-hdwallet-provider');
 
 module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        enforce: "pre",
+        use: ["source-map-loader"],
+      },
+    ],
+  },
+  ignoreWarnings: [/Failed to parse source map/],
   contracts_build_directory: path.join(__dirname, "src/abis"),
   networks: {
     development: {
